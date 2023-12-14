@@ -1,0 +1,6 @@
+Chương trình Quản lý Sinh viên (C/C++):
++ Khai báo một danh sách sinh viên, mỗi sinh viên có các thông tin như sau: Mã sinh viên, Họ tên, Giới tính, Điểm trung bình.
++ Viết hàm nhập danh sách sinh viên
++ Viết hàm sắp xếp danh sách sinh viên giảm dần theo Điểm trung bình
++ Viết hàm lưu danh sách gồm những sinh viên có Điểm trung bình >= 5 vào file text OUTPUT.OUT
++ Viết chương trình chính gọi các hàm trên
