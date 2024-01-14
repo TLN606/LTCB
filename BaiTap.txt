@@ -1,0 +1,35 @@
+2.1 Cấu trúc dữ liệu một danh sách đặc lưu trữ các số nguyên được khai báo như sau:
+#define Max 100
+int A[Max];
+int n;
+
+1. Viết các hàm thực hiện chức năng sau:
+ a. Nhập giá trị cho danh sách A.
+ b. Xuất các giá trị danh sách A ra màn hình.
+ c. Nhập số nguyên X, kiểm tra giá trị X có xuất hiện trong danh sách A không?
+ d. Nhập số nguyên X, số nguyên K, chèn giá trị X vào danh sách A tại vị trí K, xuất danh sách ra để kiểm tra.
+ e. Nhập số nguyên K, xoá phần tử trong danh sách A tại vị trí K (nếu K <= N).
+ f. Sắp xếp danh sách A giảm dần.
+ g. Tìm giá trị lớn nhất, nhỏ nhất trong danh sách A.
+2. Viết hàm main() thực hiện:
+ a. Nhập số phần tư n cho danh sách điều kiện (n > 0)
+ b. Gọi tất cả hàm trên cho danh sách A.
+
+2.2 Viết chương trình quản lý điểm thi tốt nghiệp của sinh viên. Cấu trúc dữ liệu được xây dựng dạng danh sách đặc, mỗi phần tử của danh sách chứa thông tin một sinh viên gồm: Số báo danh, Họ tên, Điểm cơ sở, Điểm chuyên ngành, Điểm trung bình và Xếp loại.
+1. Khai báo cấu trúc dữ liệu cho chương trình trên.
+2. Viết cacs hàm thực hiện các chức năng sau:
+ a. Hàm nhập danh sách sinh viên và tính giá trị cho các trường:
+  Điểm trung bình = (Điểm cơ sở + Điểm chuyên ngành) / 2
+  Xếp loại theo quy định:
+   Điểm trung bình => 9 thì Xếp loại là Giỏi
+   7 <= Điểm trung bình < 9 thì Xếp loại là Khá
+   5 <= Điêm trung bình < 7 thì Xếp loại là Trung bình
+   Điểm trung bình <5 thì Xếp loại Yếu
+ b. Xuất ra danh sách sinh viên vừa nhập
+ c. Xuất ra danh sách các sinh viên có điểm trung bình >= 5 và không có môn nào dưới 3.
+ d. Xuất ra danh sách các sinh viên Xếp loại Yếu
+ e. Chèn thêm một sinh viên mới vào danh sách tại vị trí K
+ f. Xoá sinh viên tại vị trí K trong danh sách
+ g. Sắp xếp danh sách sinh viên tăng dần theo Điểm trung bình
+ h. Thống kê số lượng và tỉ lệ theo từng xếp loại
+3. Viết hàm main() để thi hành các chức năng trên.
