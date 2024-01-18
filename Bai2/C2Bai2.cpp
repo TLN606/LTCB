@@ -10,30 +10,35 @@ struct sinhVien {
   string xepLoai;
 };
 
+void nhapSinhVienMoi(sinhVien &sv) {
+  cout << "> Nhap so bao danh: ";
+  cin >> sv.soBaoDanh;
+  cout << "> Nhap ho ten: ";
+  cin.ignore();
+  getline(cin, sv.hoTen);
+  cout << "> Nhap diem co so: ";
+  cin >> sv.diemCoSo;
+  cout << "> Nhap diem chuyen nganh: ";
+  cin >> sv.diemChuyenNganh;
+  sv.diemTrungBinh = (sv.diemCoSo + sv.diemChuyenNganh) / 2;
+  if (sv.diemTrungBinh >= 9) {
+    sv.xepLoai = "Gioi";
+  } else if (sv.diemTrungBinh >= 7 && sv.diemTrungBinh < 9) {
+    sv.xepLoai = "Kha";
+  } else if (sv.diemTrungBinh >= 5 && sv.diemTrungBinh < 7) {
+    sv.xepLoai = "Trung binh";
+  } else if (sv.diemTrungBinh < 5) {
+    sv.xepLoai = "Yeu";
+  } else {
+    cout << "> Diem trung binh khong hop le! <" << endl;
+  }
+}
+
 void nhapSinhVien(sinhVien sv[], int n) {
   for (int i = 0; i < n; i++) {
-    cout << "\nNhap thong tin sinh vien thu " << i + 1 << ": " << endl;
-    cout << "> Nhap so bao danh: ";
-    cin >> sv[i].soBaoDanh;
-    cout << "> Nhap ho ten: ";
-    cin.ignore();
-    getline(cin, sv[i].hoTen);
-    cout << "> Nhap diem co so: ";
-    cin >> sv[i].diemCoSo;
-    cout << "> Nhap diem chuyen nganh: ";
-    cin >> sv[i].diemChuyenNganh;
-    sv[i].diemTrungBinh = (sv[i].diemCoSo + sv[i].diemChuyenNganh) / 2;
-    if (sv[i].diemTrungBinh >= 9) {
-      sv[i].xepLoai = "Gioi";
-    } else if (sv[i].diemTrungBinh >= 7 && sv[i].diemTrungBinh < 9) {
-      sv[i].xepLoai = "Kha";
-    } else if (sv[i].diemTrungBinh >= 5 && sv[i].diemTrungBinh < 7) {
-      sv[i].xepLoai = "Trung binh";
-    } else if (sv[i].diemTrungBinh < 5) {
-      sv[i].xepLoai = "Yeu";
-    } else {
-      cout << "> Diem trung binh khong hop le! <" << endl;
-    }
+     cout << "\nNhap thong tin sinh vien thu " << i + 1 << ": " << endl;
+    nhapSinhVienMoi(sv[i]);
+    cout << endl;
   }
 }
 
@@ -105,6 +110,7 @@ void xoaSinhVien(sinhVien sv[], int &n, int k) {
 }
 
 void sapXepDiemTrungBinhTangDan(sinhVien sv[], int n) {
+  cout << "== Danh sach sap xep theo diem trung binh tang dan: ==" << endl;
   for (int i = 0; i < n - 1; i++) {
     for (int j = i + 1; j < n; j++) {
       if (sv[i].diemTrungBinh > sv[j].diemTrungBinh) {
@@ -150,27 +156,8 @@ int main() {
   cout << "\nNhap vi tri can chen: ";
   cin >> k;
   sinhVien newSV;
-  cout << "> Nhap so bao danh: ";
-    cin >> newSV.soBaoDanh;
-    cout << "> Nhap ho ten: ";
-    cin.ignore();
-    getline(cin, newSV.hoTen);
-    cout << "> Nhap diem co so: ";
-    cin >> newSV.diemCoSo;
-    cout << "> Nhap diem chuyen nganh: ";
-    cin >> newSV.diemChuyenNganh;
-    newSV.diemTrungBinh = (newSV.diemCoSo + newSV.diemChuyenNganh) / 2;
-    if (newSV.diemTrungBinh >= 9) {
-      newSV.xepLoai = "Gioi";
-    } else if (newSV.diemTrungBinh >= 7 && newSV.diemTrungBinh < 9) {
-      newSV.xepLoai = "Kha";
-    } else if (newSV.diemTrungBinh >= 5 && newSV.diemTrungBinh < 7) {
-      newSV.xepLoai = "Trung binh";
-    } else if (newSV.diemTrungBinh < 5) {
-      newSV.xepLoai = "Yeu";
-    } else {
-      cout << "> Diem trung binh khong hop le! <" << endl;
-    }
+  cout << "\nNhap thong tin sinh vien moi can chen: " << endl;
+  nhapSinhVienMoi(newSV);
 
   chenSinhVien(sv, n, newSV, k);
   xuatDanhSachSinhVien(sv, n);
